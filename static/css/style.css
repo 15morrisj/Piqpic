@@ -1,3 +1,18 @@
+
+ /* General*/
+
+#navbardiv{
+    height: 100px;
+    width: 150px;
+}
+
+/* Header */
+#navbar .nav-item{
+    width: 100%;
+    display: block;
+}
+/* Unclassified */
+
 #error404{
     background: url(../img/Flag.png) no-repeat right center;
     height: calc(100vh - 56px);
