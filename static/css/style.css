@@ -11,6 +11,10 @@
     width: 100%;
     display: block;
 }
+#navbar{
+    position:fixed;
+    top:0;
+}
 /* Unclassified */
 
 #error404{
