@@ -1,15 +1,12 @@
 
  /* General*/
 
-#navbardiv{
-    height: 100px;
-    width: 150px;
-}
+
 
 /* Header */
 #navbar .nav-item{
-    width: 100%;
-    display: block;
+ width: 100%;
+    
 }
 #navbar{
     position:fixed;
@@ -17,7 +14,7 @@
 }
 #header{
     width: 100px;
-    height: 100px;
+    height: 150px;
 }
 
 /* Register */

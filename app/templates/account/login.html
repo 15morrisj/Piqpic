@@ -5,17 +5,26 @@
     </div>
     <div class="row">
         <div class="col">
-            <form class="login-form">
+            <form class="login-form" method="POST" action="/login">
                 <h2>LOGIN</h2>
-                <label for="username">USERNAME</label>
-                <input type="text" name="username" id="username">
+                {% with messages = get_flashed_messages() %}
+	                {% if messages %}
+		                {% for message in messages %}
+		                <p>{{ message }}</p>
+		                {% endfor %}
+	                {% endif %}
+                {% endwith %}
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="username">
                 <br>
                 <label for="password">PASSWORD</label>
                 <input type="password" name="password" id="password">
                 <br>
+                <button type="submit">Submit</button>
+                <br>
                 <a HREF="/register">Don't have an account? Register here.</a>
                 <br>
-                <a HREF="/home">Just want to browse? Click here.</a>
+                <a HREF="/">Just want to browse? Click here.</a>
             </form>
         </div>
     </div>

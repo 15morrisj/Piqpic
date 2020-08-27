@@ -8,13 +8,20 @@
     </div>
     <div class="row">
         <div class="col">
-            <form method="post" action="/register">
-                <input class="register-input" type="text" name="username_reg" id="username_reg" placeholder="USERNAME">
+            <form method="POST" action="/register">
+                {% with messages = get_flashed_messages() %}
+	                {% if messages %}
+		                {% for message in messages %}
+		                <p>{{ message }}</p>
+                        {% endfor %}
+	                {% endif %}
+                {% endwith %}
+                <input class="register-input" type="email" name="email" id="email_reg" placeholder="EMAIL">
                 <br>
-                <input class="register-input" type="password" name="password_reg" id="password_reg" placeholder="PASSWORD">
+                <input class="register-input" type="password" name="password" id="password_reg" placeholder="PASSWORD">
                 <br>
                 <input class="register-input" type="password" name="password_confirm" id="password_confirm" placeholder="PASSWORD CONFIRM">
-                <br>
+                <br> <br>
                 <button type="submit">Submit</button>
             </form>
         </div>
