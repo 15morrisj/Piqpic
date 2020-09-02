@@ -2,8 +2,14 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="form">
-            <a HREF="/">HOME</a>
+        <div class="col">
+            <form class="form-profile" method="POST" action="/profile">
+                <a HREF="/">HOME</a><br>
+                <h5>Change Settings Below (Temporary Location)</h5>
+                <input name="firstname" value="{{session['user']['first_name']}}" placeholder="First Name">
+                <input name="lastname" value="{{session['user']['last_name']}}" placeholder="Last Name">
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
