@@ -1,11 +1,23 @@
 
  /* General*/
-
-
+.entry-form{
+    margin: auto;
+    width: 50%;
+    margin-top: 50px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: silver;
+    text-align: center;
+}
+/* Images */
+.profimg{
+    height: 120px;
+    width: auto;
+}
 
 /* Header */
 #navbar .nav-item{
- width: 100%;
+    width: 100%;
     
 }
 #navbar{
@@ -19,7 +31,6 @@
 /* Register */
 .register-input{
     position: relative;
-    right: 50px;
     top: 15px;
 }
 .register-label{
@@ -28,10 +39,11 @@
 }
 
 
+
 /* Unclassified */
 
 #error404{
-    background: url(../img/Flag.png) no-repeat right center;
+    background: url(../img/Flag.png) right center;
     height: calc(100vh - 56px);
     background-size: 600px 600px;
 }
@@ -41,7 +53,4 @@
 }
 #brand{
     font-size: 30;
-}
-.login-form{
-    text-align: center;
 }

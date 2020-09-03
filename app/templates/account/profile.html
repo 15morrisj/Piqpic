@@ -6,10 +6,20 @@
             <form class="form-profile" method="POST" action="/profile">
                 <a HREF="/">HOME</a><br>
                 <h5>Change Settings Below (Temporary Location)</h5>
+                {% with messages = get_flashed_messages() %}
+	                {% if messages %}
+		                {% for message in messages %}
+		                <p>{{ message }}</p>
+		                {% endfor %}
+	                {% endif %}
+                {% endwith %}
                 <input name="firstname" value="{{session['user']['first_name']}}" placeholder="First Name">
-                <input name="lastname" value="{{session['user']['last_name']}}" placeholder="Last Name">
+                <input name="lastname" value="{{session['user']['last_name']}}" placeholder="Last Name"><br>
                 <button type="submit">Submit</button>
             </form>
+            <p class="avatar">
+                <img class="profimg" src="{{session['user']['avatar']}}">
+            </p>
         </div>
     </div>
 </div>

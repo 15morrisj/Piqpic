@@ -3,12 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 id="register-title">REGISTER</h2>
+            
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <form method="POST" action="/register">
+            <form method="POST" action="/register" class="entry-form">
+                <h2 id="register-title">REGISTER</h2>
                 {% with messages = get_flashed_messages() %}
 	                {% if messages %}
 		                {% for message in messages %}

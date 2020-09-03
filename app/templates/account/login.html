@@ -5,7 +5,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <form class="login-form" method="POST" action="/login">
+            <form class="entry-form" method="POST" action="/login">
                 <h2>LOGIN</h2>
                 {% with messages = get_flashed_messages() %}
 	                {% if messages %}
@@ -14,11 +14,9 @@
 		                {% endfor %}
 	                {% endif %}
                 {% endwith %}
-                <label for="email">EMAIL</label>
-                <input type="email" name="email" id="username">
+                <input type="email" name="email" id="username" placeholder="EMAIL">
                 <br>
-                <label for="password">PASSWORD</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" placeholder="PASSWORD">
                 <br>
                 <button type="submit">Submit</button>
                 <br>
