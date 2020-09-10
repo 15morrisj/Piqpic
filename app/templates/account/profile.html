@@ -15,11 +15,14 @@
                 {% endwith %}
                 <input name="firstname" value="{{session['user']['first_name']}}" placeholder="First Name">
                 <input name="lastname" value="{{session['user']['last_name']}}" placeholder="Last Name"><br>
+                <input name="profpic" type="file" value="{{session['user']['avatar']}}"><br>
                 <button type="submit">Submit</button>
             </form>
             <p class="avatar">
                 <img class="profimg" src="{{session['user']['avatar']}}">
             </p>
+            <a HREF="/images/">Test IMG Button</a>
+            <a HREF="/images/upload">Upload Image</a>
         </div>
     </div>
 </div>

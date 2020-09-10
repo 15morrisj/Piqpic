@@ -14,19 +14,44 @@
     height: 120px;
     width: auto;
 }
+.grid-item{
+    width: calc(33.3333% - 30px);
+    float: left;
+    margin-bottom: 30px;
+}
+.grid-item img{
+    width: 100%;
+    height: auto;
+}
 
 /* Header */
 #navbar .nav-item{
     width: 100%;
-    
 }
-#navbar{
+.navbar{
     position:fixed;
     top:0;
     left:0;
-    width: 200px;
-    height: 150px;
+    width: 225px;
+    height: 200px;
+    background-color: black;
+    z-index: 1;
 }
+#navbar-brand{
+    position:fixed;
+    top:25;
+}
+.nav-link{
+    color: white;
+    text-align: right;
+    padding: 5px;
+}
+.title{
+    position:fixed;
+    top: 35px;
+}
+
+
 
 /* Register */
 .register-input{

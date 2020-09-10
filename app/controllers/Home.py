@@ -1,20 +1,24 @@
-from app.classes.Database import Database
-from flask import Blueprint, render_template, flash
+from app.models.Image import Image
+from flask import Blueprint, render_template, flash, session
+from flask import current_app as flask_app
 
 bp = Blueprint('home', __name__, url_prefix='', static_folder='../static')
 
 # Load the index page
-@bp.route("/")
-def home():
-    return render_template('home.html')
+@bp.route('/')
+def index():
 
-@bp.route("/account/login")
-def login():
-    return render_template('login.html')
+    error = None
+    images = []
+    try:
+        image_model = Image()
+        images = image_model.get_images()
+    except Exception as err:
+        error = err
+    if error:
+        flash(str(error))
 
-@bp.route("/account/register")
-def register():
-    return render_template('register.html')
+    return render_template('home.html', images=images)
 
 @bp.errorhandler(404)
 def error404(e):
