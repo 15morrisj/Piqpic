@@ -2,8 +2,6 @@
 {% block content %}
 <div class="container">
     <div class="row">
-    </div>
-    <div class="row">
         <div class="col">
             <form class="entry-form" method="POST" action="/login">
                 <h2>LOGIN</h2>
@@ -14,15 +12,15 @@
 		                {% endfor %}
 	                {% endif %}
                 {% endwith %}
-                <input type="email" name="email" id="username" placeholder="EMAIL">
+                <input type="email" name="email" id="username" class="login-text" placeholder="EMAIL">
                 <br>
-                <input type="password" name="password" id="password" placeholder="PASSWORD">
+                <input type="password" name="password" id="password" class="login-text" placeholder="PASSWORD">
                 <br>
-                <button type="submit">Submit</button>
+                <button type="submit" class="login-button btn">Submit</button>
+                <br><br>
+                <a HREF="/register" class="linkbtn btn">Don't have an account? Register here.</a>
                 <br>
-                <a HREF="/register">Don't have an account? Register here.</a>
-                <br>
-                <a HREF="/">Just want to browse? Click here.</a>
+                <a HREF="/" class="linkbtn btn">Just want to browse? Click here.</a>
             </form>
         </div>
     </div>

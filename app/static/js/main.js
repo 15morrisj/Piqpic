@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	var $grid = $('.grid').masonry({
-		gutter: 30
+		gutter: 5
 	});
 	
 	// layout Masonry after each image loads

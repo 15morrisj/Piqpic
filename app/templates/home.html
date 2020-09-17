@@ -1,4 +1,24 @@
     {% extends "base.html" %}
     {% block content %}
-    <h1>Text Here</h1>
+    <div id="images" class="container-fluid">
+		<div class="row">
+			<div class="col">
+                <br>
+				{% with messages = get_flashed_messages() %}
+					{# Handle messages here #}
+				{% endwith %}
+				{% if images %}
+					<div class="grid">
+					{% for image_object in images.each() %}
+						{% with image = image_object.val() %}
+						<div class="grid-item">
+							<img class="card-img-top" src="{{ image.upload_location }}" alt="{{ image.description }}"> 
+						</div>
+						{% endwith %}
+					{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+    </div>
     {% endblock %}

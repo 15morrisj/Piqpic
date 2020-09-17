@@ -9,13 +9,17 @@
     background-color: silver;
     text-align: center;
 }
+.body{
+    background-color: #1A1A1A;
+}
+
 /* Images */
 .profimg{
     height: 120px;
     width: auto;
 }
 .grid-item{
-    width: calc(33.3333% - 30px);
+    width: calc(33.3333% - 10px);
     float: left;
     margin-bottom: 30px;
 }
@@ -33,7 +37,7 @@
     top:0;
     left:0;
     width: 225px;
-    height: 200px;
+    height: 160px;
     background-color: black;
     z-index: 1;
 }
@@ -42,7 +46,7 @@
     top:25;
 }
 .nav-link{
-    color: white;
+    color: #e6e6e6;
     text-align: right;
     padding: 5px;
 }
@@ -51,7 +55,29 @@
     top: 35px;
 }
 
-
+/* Login */
+.entry-form{
+    position: relative;
+    right: 120px;
+    background-color: black;
+}
+.login-text{
+    padding: 5px;
+    margin: 5px;
+}
+h2{
+    color: #e6e6e6;
+}
+.login-button{
+    background-color: #e6e6e6;
+    color: black;
+}
+.linkbtn{
+    background-color: #e6e6e6;
+    color: black;
+    padding: 5px;
+    margin: 10px;
+}
 
 /* Register */
 .register-input{
@@ -78,4 +104,9 @@
 }
 #brand{
     font-size: 30;
+}
+@media (max-width:576px){
+    .class{
+        margin-top: 100;
+    }
 }
