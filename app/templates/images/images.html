@@ -4,24 +4,17 @@
     <div id="images" class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<h2>Images</h2>
+				<h2>TEST</h2>
 				{% with messages = get_flashed_messages() %}
 					{# Handle messages here #}
 				{% endwith %}
 				{% if images %}
 					<div class="grid">
-					{% for image_object in images.each() %}
+						{% for image_object in images.each() %}
 						{% with image = image_object.val() %}
-						<div class="grid-item">
-							<div class="card" style="width: 18rem;">
-								<img class="card-img-top" src="{{ image.upload_location }}" alt="{{ image.description }}">
-								<div class="card-body">
-								  <h5 class="card-title">Card title</h5>
-								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								  <a href="#" class="btn btn-primary">Go somewhere</a>
-								</div>
-							</div> 
-						</div>
+							<div class="grid-item" data-image='{{ image|tojson }}'>
+								<img src="{{ image.upload_location }}" alt="{{ image.description }}">
+							</div>
 						{% endwith %}
 					{% endfor %}
 					</div>

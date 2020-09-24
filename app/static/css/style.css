@@ -27,7 +27,22 @@
     width: 100%;
     height: auto;
 }
-
+#image-modal .modal-body{
+    background-color:#1A1A1A;
+}
+#image-modal .modal-title{
+    color: white;
+}
+#image-modal .modal-body p{
+    color: white;
+}
+.modal-content{
+    border: none;
+}
+.modal-content img{
+    width: 100%;
+    height: auto;
+}
 /* Header */
 #navbar .nav-item{
     width: 100%;

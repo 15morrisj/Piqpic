@@ -9,11 +9,11 @@
 				{% endwith %}
 				{% if images %}
 					<div class="grid">
-					{% for image_object in images.each() %}
+						{% for image_object in images.each() %}
 						{% with image = image_object.val() %}
-						<div class="grid-item">
-							<img class="card-img-top" src="{{ image.upload_location }}" alt="{{ image.description }}"> 
-						</div>
+							<div class="grid-item" data-image='{{ image|tojson }}'>
+								<img src="{{ image.upload_location }}" alt="{{ image.description }}">
+							</div>
 						{% endwith %}
 					{% endfor %}
 					</div>
