@@ -18,4 +18,47 @@ $(document).ready(function(){
 		$('#image-modal .modal-body').html(img + title + description);
 		$('.modal').modal('show');
 	});
+
+	$('i.like').click(function(e) {
+	
+		e.stopPropagation();
+		e.preventDefault();
+	
+		var like = $(this).hasClass('far');
+		var image_id = $(this).data('image');
+	  
+		var _this = $(this);
+	
+		$.getJSON(
+			$SCRIPT_ROOT + '/like', 
+			{
+				like: like,
+				image_id: image_id
+			}, 
+			function(result) {
+				_this.removeClass('far')
+			}
+		);
+	});
+	$('i.not_liked').click(function(e) {
+	
+		e.stopPropagation();
+		e.preventDefault();
+	
+		var like = $(this).hasClass('fas');
+		var image_id = $(this).data('image');
+	  
+		var _this = $(this);
+	
+		$.getJSON(
+			$SCRIPT_ROOT + '/unlike', 
+			{
+				like: unlike,
+				image_id: image_id
+			}, 
+			function(result) {
+				_this.removeClass('fas')
+			}
+		);
+	});
 });
