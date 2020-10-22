@@ -26,7 +26,6 @@ $(document).ready(function(){
 	
 		var like = $(this).hasClass('far');
 		var image_id = $(this).data('image');
-	  
 		var _this = $(this);
 	
 		$.getJSON(
@@ -36,29 +35,32 @@ $(document).ready(function(){
 				image_id: image_id
 			}, 
 			function(result) {
-				_this.removeClass('far')
+				if (result) {
+					if (like) {
+						_this.removeClass('far');
+						_this.addClass('fas');
+					} else {
+						_this.removeClass('fas');
+						_this.addClass('far');
+					}
+				}
 			}
 		);
+		return false;
 	});
-	$('i.not_liked').click(function(e) {
+	if ($('#filter-select').length > 0 ) {
+		var filter = $('#filter-select').data('filter');
+		$('#filter-select').val(filter);
+	}
 	
-		e.stopPropagation();
-		e.preventDefault();
+	if ($('#category').length > 0 ) {
+		var category = $('#category').data('category');
+		$('#category').val(category);
+	}
 	
-		var like = $(this).hasClass('fas');
-		var image_id = $(this).data('image');
-	  
-		var _this = $(this);
-	
-		$.getJSON(
-			$SCRIPT_ROOT + '/unlike', 
-			{
-				like: unlike,
-				image_id: image_id
-			}, 
-			function(result) {
-				_this.removeClass('fas')
-			}
-		);
+	$('#filter-select').change(function(e) {
+		var new_filter = 'filter-' + this.value;
+		$('#image figure').removeClass();
+		$('#image figure').addClass(new_filter);
 	});
 });
