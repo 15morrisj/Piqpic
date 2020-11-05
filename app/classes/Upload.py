@@ -4,6 +4,7 @@ from flask import current_app as flask_app
 from app import SITE_ROOT
 
 class Upload():
+    
 
     def __init__(self):
         self.extensions = {'png', 'jpg', 'jpeg', 'gif'}

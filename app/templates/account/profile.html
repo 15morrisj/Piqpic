@@ -9,7 +9,7 @@
                 {% with messages = get_flashed_messages() %}
 	                {% if messages %}
 		                {% for message in messages %}
-		                <p>{{ message }}</p>
+		                <p class="error-msg">{{ message }}</p>
 		                {% endfor %}
 	                {% endif %}
                 {% endwith %}
@@ -18,9 +18,11 @@
                 <input name="profpic" type="file" value="{{session['user']['avatar']}}"><br>
                 <button type="submit">Submit</button>
             </form>
-            <p class="avatar">
-                <img class="profimg" src="{{session['user']['avatar']}}">
-            </p>
+            {% if session['user']['avatar'] %}
+                <div class="avatar">
+                    <img class="profimg" src="{{session['user']['avatar']}}" alt="Your Profile Image">
+                </div>
+                {% endif %}
             <a HREF="/images/">Test IMG Button</a>
             <a HREF="/images/upload">Upload Image</a>
         </div>

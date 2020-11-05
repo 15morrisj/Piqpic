@@ -6,7 +6,11 @@
 			<div class="col">
 				<h2>{{ title }}</h2>
 				{% with messages = get_flashed_messages() %}
-					{# Handle messages here #}
+					{% if messages %}
+					{% for message in messages %}
+					<p class="error-msg">{{ message }}</p>
+					{% endfor %}
+				{% endif %}
 				{% endwith %}
 				
 				{% if images %}
