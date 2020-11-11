@@ -11,7 +11,7 @@ class Image():
         return None
 
     def get_images(self, limit=20):
-        
+        #Presumably looks for all the images in the server.
         error = None
         images = False
 
@@ -22,14 +22,17 @@ class Image():
         except Exception as err:
             flask_app.logger.info(err)
             error = err
-
+            #These two tell you if things failed.
         if error:
             raise Exception(error)
         else:
             return images
 
     def get_category_images(self, category, limit=20):
-        
+        """
+        This chunk here seems to govern categories. When the user asks for images in a certain category,
+        this is what finds those categorical images. 
+        """
         error = None
         images = False
         
@@ -47,7 +50,9 @@ class Image():
             return images
 
     def get_image(self, image_id):
-        
+        """
+        This segment here.. Seems like it searches for info on a very specific image.
+        """
         error = None
         image = False
         
@@ -65,7 +70,7 @@ class Image():
             return image
 
     def delete_image(self, image_id):
-        
+        #Hello, this bit tells the server that the chosen image should be designated "gone".
         error = None
         
         try:
@@ -82,7 +87,7 @@ class Image():
             return
 
     def get_user_images(self, limit=20):
-        
+        #This bit fetches the images that the user has posted.
         error = None
         images = False
         user_id = False

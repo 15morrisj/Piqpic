@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 
 	$('i.like').click(function(e) {
-	
+	//This bit's responsible for switching the filled and unfilled heart icons when one likes an image.
 		e.stopPropagation();
 		e.preventDefault();
 	
